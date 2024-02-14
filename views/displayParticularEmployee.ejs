@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .employee-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .employee-label {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .employee-data {
+            margin-bottom: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="employee-container">
+        <h2>Employee Information</h2>
+
+        <div class="employee-data">
+            <div class="employee-label">Employee Profile:</div>
+            <img src="<%= employee.info %>"/>
+            <!-- <img src="images/firstemployee.png"/> -->  
+            <!-- images, css files, javascript files ==> STATIC FILES -->
+            <!-- Tell the server to display a static files ==> server cannot display it -->
+            <!-- Any static files that has to be loaded / displayed by the server
+            will be displayed only if we use static()
+            -->
+        </div>
+
+        <div class="employee-data">
+            <div class="employee-label">Employee ID:</div>
+            <%= employee.employeeId %>
+        </div>
+
+        <div class="employee-data">
+            <div class="employee-label">First Name:</div>
+            <%= employee.firstName %>
+        </div>
+
+        <div class="employee-data">
+            <div class="employee-label">Last Name:</div>
+            <%= employee.lastName %>
+        </div>
+
+        <div class="employee-data">
+            <div class="employee-label">Email:</div>
+            <%= employee.email %>
+        </div>
+
+        <div class="employee-data">
+            <div class="employee-label">Department:</div>
+            <%= employee.department %>
+        </div>
+    </div>
+
+</body>
+</html>

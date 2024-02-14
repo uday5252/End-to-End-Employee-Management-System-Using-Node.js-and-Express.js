@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+
+        .student-container {
+            margin: 10px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            text-align: left;
+        }
+
+        h3 {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Here are the employee details</h1>
+    <!-- { empdata :[{}, {}, {}]} -->
+    <% for(let i of empdata){ %>
+        <img src="<%= i.info %>" width="150px"/>
+        <div class="student-container" style="display: flex; flex-direction: column; width: 100px;align-items: center;margin-left: 700px;">
+            <a href=<%= "/employees/"+i.employeeId %>><h3><%= i.firstName %></h3></a>
+        </div>
+    <% } %>
+
+    <!-- http://localhost:8000/view?sort=ASC -->
+
+    <form method="GET" style="text-align: center; margin-top: 20px;">
+        <input type="text" name="sort" value="ASC" hidden/>
+        <button style="padding: 10px 15px; font-size: 16px; background-color: #4CAF50; color: #fff; border: none; border-radius: 4px; cursor: pointer;">
+            Sort
+        </button>
+   </form>
+
+</body>
+</html>
+
+<!-- 404 ==> status code, status message -->
+<!-- 404 not found ==> server is not able to give the response, because of
+wrong input given by the customer/user -->
